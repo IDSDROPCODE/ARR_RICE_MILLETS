@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  
+ <display-name>arr_rice_millets</display-name>
+  
+  <servlet>
+ <servlet-name>RegisterServlet</servlet-name> 
+ <servlet-class>com.mvc.controller.RegisterServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>RegisterServlet</servlet-name>
+  <url-pattern>/RegisterServlet</url-pattern>
+  
+  </servlet-mapping>
+  <servlet>
+ <servlet-name>LoginServlet</servlet-name>
+ <servlet-class>com.mvc.controller.LoginServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>LoginServlet</servlet-name>
+  <url-pattern>/LoginServlet</url-pattern>
+  
+  </servlet-mapping>
+  
+  <servlet>
+ <servlet-name>ProductServlet</servlet-name>
+ <servlet-class>com.mvc.controller.ProductServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>ProductServlet</servlet-name>
+  <url-pattern>/ProductServlet</url-pattern>
+  
+  </servlet-mapping>
+  
+  <servlet>
+ <servlet-name>AddriceServlet</servlet-name>
+ <servlet-class>com.mvc.controller.AddriceServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>AddriceServlet</servlet-name>
+  <url-pattern>/AddriceServlet</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+ <servlet-name>AdminDashboardPanel</servlet-name>
+ <servlet-class>com.mvc.controller.AdminDashboardPanel</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>AdminDashboardPanel</servlet-name>
+  <url-pattern>/AdminDashboardPanel</url-pattern>
+  </servlet-mapping>
+  
+      
+  <servlet>
+ <servlet-name>AllSellersServlet</servlet-name>
+ <servlet-class>com.mvc.controller.AllSellersServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>AllSellersServlet</servlet-name>
+  <url-pattern>/AllSellersServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+ <servlet-name>SellerCommServlet</servlet-name>
+ <servlet-class>com.mvc.controller.SellerCommServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>SellerCommServlet</servlet-name>
+  <url-pattern>/SellerCommServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+ <servlet-name>NewStaffsServelet</servlet-name>
+ <servlet-class>com.mvc.controller.NewStaffsServelet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>NewStaffsServelet</servlet-name>
+  <url-pattern>/NewStaffsServelet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+ <servlet-name>SelrOrderServlet</servlet-name>
+ <servlet-class>com.mvc.controller.SelrOrderServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>SelrOrderServlet</servlet-name>
+  <url-pattern>/SelrOrderServlet</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+ <servlet-name>CustListServlet</servlet-name>
+ <servlet-class>com.mvc.controller.CustListServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>CustListServlet</servlet-name>
+  <url-pattern>/CustListServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+ <servlet-name>BrandServlet</servlet-name>
+ <servlet-class>com.mvc.controller.BrandServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>BrandServlet</servlet-name>
+  <url-pattern>/BrandServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+ <servlet-name>CategoryServlet</servlet-name>
+ <servlet-class>com.mvc.controller.CategoryServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>CategoryServlet</servlet-name>
+  <url-pattern>/CategoryServlet</url-pattern>
+  </servlet-mapping>
+   <servlet>
+ <servlet-name>SellerDetServlet</servlet-name>
+ <servlet-class>com.mvc.controller.SellerDetServlet</servlet-class>
+  </servlet>
+  
+    <servlet-mapping>
+  <servlet-name>SellerDetServlet</servlet-name>
+  <url-pattern>/SellerDetServlet</url-pattern>
+  </servlet-mapping>
+   <servlet>
+   <servlet-name>ProductRevServlet</servlet-name>
+ <servlet-class>com.mvc.controller.ProductRevServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ProductRevServlet</servlet-name>
+  <url-pattern>/ProductRevServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+ <servlet-name>ClassPackageServlet</servlet-name>
+ <servlet-class>com.mvc.controller.ClassPackageServlet</servlet-class>
+  </servlet>
+  
+    <servlet-mapping>
+  <servlet-name>ClassPackageServlet</servlet-name>
+  <url-pattern>/ClassPackageServlet</url-pattern>
+  </servlet-mapping>
+   <servlet>
+   <servlet-name>ClassProBean</servlet-name>
+ <servlet-class>com.mvc.controller.ClassProBean</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ClassProBean</servlet-name>
+  <url-pattern>/ClassProBean</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+     <servlet>
+   <servlet-name>UserDashboardPanel</servlet-name>
+ <servlet-class>com.mvc.controller.UserDashboardPanel</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>UserDashboardPanel</servlet-name>
+  <url-pattern>/UserDashboardPanel</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
