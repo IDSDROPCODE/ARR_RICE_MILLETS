@@ -23,6 +23,7 @@ public class DBConnection {
 	            e.printStackTrace();
 	         }       
 	         con = DriverManager.getConnection(url, username, password); //attempting to connect to MySQL database
+	         System.out.println("Connect opened====>"+con);
 	        
 	     } 
 	     catch (Exception e) 

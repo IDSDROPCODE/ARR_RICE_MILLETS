@@ -24,6 +24,18 @@
   
   </servlet-mapping>
   
+  
+  <servlet>
+ <servlet-name>ARRMainServlet</servlet-name>
+ <servlet-class>com.mvc.controller.ARRMainServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>ARRMainServlet</servlet-name>
+  <url-pattern>/ARRMainServlet</url-pattern> 
+  </servlet-mapping>
+  
+  
   <servlet>
  <servlet-name>ProductServlet</servlet-name>
  <servlet-class>com.mvc.controller.ProductServlet</servlet-class>

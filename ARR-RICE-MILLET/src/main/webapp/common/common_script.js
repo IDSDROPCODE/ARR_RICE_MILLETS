@@ -19,8 +19,8 @@ function loginvalidation(){
 	var loguser=document.getElementById("txtfldlogEmailId");
 	var logpass= document.getElementById("txtfldlogPass");//"txtFullname" jsp field Id - use to get element value
 	
-	if(nullOrBlank(loguser,"Please Give valid UserName and Password")){return false;}//true
-	if(nullOrBlank(logpass,"Please Give valid UserName and Password")){ return false;}
+	if(nullOrBlank(loguser,"Please Enter your Email Id")){return false;}//true
+	if(nullOrBlank(logpass,"Please Enter your password")){ return false;}
 	
 	logForm.action = "LoginServlet";//java name - servlet name
 	logForm.submit();
@@ -44,10 +44,10 @@ function productVal(){
 }
 
 
-$(function () {
-    //Initialize Select2 Elements
-    $('.select2').select2();
-});
+//$(function () {
+//    //Initialize Select2 Elements
+//    $('.select2').select2();
+//});
 
 
 
@@ -62,12 +62,15 @@ function forUserMenuItems(itemName){
 }
 
 
-function removeMsg(){ 
+function removeMsg(elmid){ 
+	
+	
 	$("#spanlogmsg").fadeOut(function() {
   		$(this).text("").fadeIn("slow");
 });
 
-
+	elmid.style.border="";
+   
 
 }
 
@@ -93,6 +96,10 @@ function submitRegister(){
 	if(nullOrBlank(regPwd,"Please Fill Password with 6 characters atleast")){ return false;}
 	if(nullOrBlank(regConPwd,"Please Fill Confirm Password")){ return false;}
 	 
+	if(!document.getElementById("txtagree").checked){
+		alert("Please Agree to the terms and Conditions")
+		return false;
+	}
 	
 	
 	regFormName.action = "RegisterServlet";//java name - servlet name
@@ -108,7 +115,7 @@ function nullOrBlank(elmid,message){
 	if(elmid.value == "" || elmid.value == null || elmid.length == 0){
 		 alert(message); 
 		 elmid.focus();
-		elmid.style.border = "thin solid maroon";
+		elmid.style.border = "1px solid maroon";
 		return true;
 	} else{
 		return false;
@@ -127,7 +134,7 @@ function formcolorchange(elmid){
 function chkpassword(elmid){
 //	'txtPassword','txtConPassword'
 	 
-	if(elmid.length >= 6){
+	if(elmid.length > 6){
 		alert("please fill atleast 6 character");
 		elmid.value="";
 		elmid.focus();
@@ -135,13 +142,26 @@ function chkpassword(elmid){
 	}
 	
 }
-
+function lettersOnly(id){
+	var letterFormat =/^[a-zA-Z]+$/;
+	
+	if(letterFormat.test(id.value)){
+		return true;
+	}else{
+		alert("Please Enter Proper Username");
+		id.focus();
+		id.value="";
+		return false;
+	}
+	
+	
+}
 
 function conPassword(){
 		var passwrd = document.getElementById("txtPassword").value;
 	var conformPwd = document.getElementById("txtConPassword").value;
 	
-if(!document.getElementById("txtConPassword").length >= 6){
+if(!document.getElementById("txtConPassword").length > 6){
 		alert("please fill atleast 6 character");
 		conformPwdId.value="";
 	}
@@ -149,8 +169,9 @@ if(!document.getElementById("txtConPassword").length >= 6){
 	
 	if(passwrd != conformPwd){
 		alert("Mismatch Passwords");
-		passwrd.value="";
-		conformPwdId.value="";
+		document.getElementById("txtPassword").value ="";
+		document.getElementById("txtConPassword ").value ="";
+		document.getElementById("txtPassword").focus();
 		
 	}
 }
@@ -173,11 +194,13 @@ function EmailCheck(email){//email=elementid
 
 function isNumber(evt,elemid) {
     var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+ 
     		  
     if (iKeyCode != 46 && iKeyCode > 31 && (  iKeyCode < 48 || iKeyCode > 57)){ 
-	alert("Enter valid phone number");
-	elemid.focus(); 
-        return false;
+			alert("Enter valid phone number");
+			elemid.focus(); 
+			elemid.value="";
+		    return false;
         
     }  
     return true;
@@ -344,31 +367,202 @@ function readPreviewImage(input,imgId) {
             }
         }
 
-$(document).ready(function() {  
-		setTimeout(function(){
-			$($.fn.dataTable.tables(true)).DataTable().columns.adjust().draw(false); 
-		},500);
+
 		
-		var newProductTbl = $('#newProductTable').DataTable( {
-		destroy: true,
-	 	responsive: false,        
-	    ordering: false,
-	    searching: false,
-		scrollY:  "43vh",   
-		scrollX: true,
-	    scroller: false,
-	    scrollCollapse:false,
-	    paging:false, 
-	    filter:false,  
-	    dom: '<<"top" ip>flt>',
-		columnDefs: [  { width: '20px', targets: [0,1]},
-	       	             {"className": "dt-head-center text-center",targets: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],"orderable": false,"searchable": false}],		 
-		 fnDrawCallback: function(oSettings) {
-			    if (oSettings._iDisplayLength > oSettings.fnRecordsDisplay()) { 
-			    } 
-		 }
-	}).draw();
-	
-		});
+		
+		
+		
+//Date validation - EG: DD/MM/YYYY - 20/02/2021
+//1.
+function checkDateFormat(date) {
+    var txtVal = date.val();
+    var day, month, year;
+    var arr = [];
+    var chgDateFormat = ""; 
+    if (txtVal.indexOf('.') > 0 || txtVal.indexOf('-') > 0
+            || txtVal.indexOf(' ') > 0 || txtVal.indexOf('/') > 0) {
+        chgDateFormat = chgOthSymToSlack(txtVal); 
+    }else{
+        if(!isEmpty(txtVal)){
+            applyErrorToastrAlert('Invalid Date');
+            date.val("");
+        }
+        return;
+    }
+    if (!isEmpty(chgDateFormat) && !isDate(chgDateFormat)) {
+                applyErrorToastrAlert('Invalid Date');
+                date.val("");
+                return;
+     } 
+    
+    date.val(chgDateFormat);
+}
+
+
+function isEmpty(strVal) 
+{ 
+   if ((strVal.length==0) || (strVal == null) || (strVal == undefined) || (strVal == "undefined")) 
+   {
+      return true;
+   }
+   else 
+   { 
+      return false; 
+   }
+}//end IsEmpty
+
+
+//2. EG: DD/MM/YYYY - 20/02/2021
+//<input type=”text” id=”DOB” onchange=” isDate(this)”>
+function isDate(txtDate)
+{
+    var currVal = txtDate.value;
+    if(currVal == '')
+        return false;
+    
+    var rxDatePattern = /^(\d{1,2})(\/|-)(\d{1,2})(\/|-)(\d{4})$/;
+    var dtArray = currVal.match(rxDatePattern);
+    
+    if (dtArray == null) 
+        return false;
+    
+
+    dtDay= dtArray[1];
+    dtMonth = dtArray[3];    
+    dtYear = dtArray[5];        
+    
+    if (dtMonth < 1 || dtMonth > 12) 
+        return false;
+    else if (dtDay < 1 || dtDay> 31) 
+        return false;
+    else if ((dtMonth==4 || dtMonth==6 || dtMonth==9 || dtMonth==11) && dtDay ==31) 
+        return false;
+    else if (dtMonth == 2) 
+    {
+        var isleap = (dtYear % 4 == 0 && (dtYear % 100 != 0 || dtYear % 400 == 0));
+        if (dtDay> 29 || (dtDay ==29 && !isleap)) 
+                return false;
+    }
+    return true;
+}
+
+
+function chgOthSymToSlack(txtVal) {
+    var arr = [];
+    var day, month, year;
+    var symbol = "", date = "";
+    if (txtVal.indexOf('.') > 0) {
+        symbol = ".";
+    }
+    if (txtVal.indexOf('-') > 0) {
+        symbol = "-";
+    }
+    if (txtVal.indexOf(' ') > 0) {
+        symbol = " ";
+    }
+    if (txtVal.indexOf('/') > 0) {
+        symbol = "/";
+    }
+    if (!isEmpty(symbol)) {
+        arr = txtVal.split(symbol); 
+        if (arr[0].length == 1) {
+            day = arr[0].replace(arr[0], "0" + arr[0]);
+        } else {
+            day = arr[0];
+        }
+
+        if (arr[1].length == 1) {
+            month = arr[1].replace(arr[1], "0" + arr[1]);
+        } else {
+            month = arr[1];
+        }
+
+        year = arr[2];
+    }
+
+    date = day + "/" + month + "/" + year;
+     
+    return date;
+}
+function CheckDob(dob)
+{
+var dateformat = /^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/;
+ if(dob.value.match(dateformat))
+{
+     
+var opera1 = dob.value.split('/');
+var opera2 = dob.value.split('-');
+lopera1 = opera1.length;
+lopera2 = opera2.length;
+if (lopera1>1)
+{
+var pdate = dob.value.split('/');
+}
+else if (lopera2>1)
+{
+var pdate = dob.value.split('-');
+}
+var mm  = parseInt(pdate[0]);
+var dd = parseInt(pdate[1]);
+var yy = parseInt(pdate[2]);
+var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+if (mm==1 || mm>2)
+{
+if (dd>ListofDays[mm-1])
+{
+    alert("Invalid date format",dob);
+    
+return false;
+}
+}
+if (mm==2)
+{
+var lyear = false;
+if ( (!(yy % 4) && yy % 100) || !(yy % 400)) 
+{
+lyear = true;
+}
+if ((lyear==false) && (dd>=29))
+{
+    alert("Invalid date format",dob);
+return false;
+}
+if ((lyear==true) && (dd>29))
+{ 
+alert("Invalid date format",dob);
+return false;
+}
+}
+}
+else
+{
+if(!(isEmpty(dob.value))){ 
+alert("Invalid date format",dob);
+dob.value="";
+}
+return false;
+}
+}
+
+
+
+
+
+//Percentage validation =>100%
+function checkPercntVal(elemid){ 
+     
+    if(!isEmpty(elemid.value)){
+        if(elemid.value > 100){ 
+//      showAlert("% value should be less than or equal to 100",elemid);
+       alert("% value should be less than or equal to 100",elemid);
+        elemid.value="";
+        return false;
+       }
+    }
+    return true;
+}
+ 
+
+
 		
 	

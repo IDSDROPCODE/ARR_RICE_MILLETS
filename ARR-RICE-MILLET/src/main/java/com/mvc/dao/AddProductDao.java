@@ -4,11 +4,10 @@
 package com.mvc.dao;
 
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*; 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.mvc.bean.AddProductBean;
 
@@ -110,5 +109,72 @@ public class AddProductDao {
         }       
         	return "Oops.. Something went wrong there..!";  // On failure, send a message from here.
     }
+
+	public List productAllSearch(AddProductBean addproBean) {
+		// TODO Auto-generated method stub
+		
+		List productSrchList = new ArrayList();
+		String strParamAppend = "";
+		
+		String srchParams =  addproBean.getTxtProductName();
+		if(!ARRCommonUtils.nullOrBlank(srchParams)){
+			strParamAppend +=" where  (`arr_product`.`ProName`) = '"+srchParams+"'";
+			 
+		}
+		
+		
+		
+		String QUERY_PRODUCT_SEARCH ="SELECT `arr_product`.`ProId`,"
+				+ "    `arr_product`.`ProName`,"
+				+ "    `arr_product`.`ProCateg`,"
+				+ "    `arr_product`.`Brand`,"
+				+ "    `arr_product`.`Unit`,"
+				+ "    `arr_product`.`PurQty`,"
+				+ "    `arr_product`.`Barcode`,"
+				+ "    `arr_product`.`UnitPrice`,"
+				+ "    `arr_product`.`DisDateRange`,"
+				+ "    `arr_product`.`Discount`,"
+				+ "    `arr_product`.`Quantity`,"
+				+ "    `arr_product`.`ProImage`,"
+				+ "    `arr_product`.`ProDesc`,"
+				+ "    `arr_product`.`ProComment`,"
+				+ "    `arr_product`.`loggeduser`,"
+				+ "    `arr_product`.`createdDate` FROM `arr_rice_millets`.`arr_product` " +strParamAppend+"";
+		
+		
+		  //STEP 5: JDBC Connectivity Establishment
+        Connection con = null;//connection establish 
+System.out.println("QUERY_PRODUCT_SEARCH=>"+QUERY_PRODUCT_SEARCH);
+        try
+        {
+            con = DBConnection.createConnection();//open the connection
+            Statement srchStatement = con.createStatement();
+            ResultSet srchRs = srchStatement.executeQuery(QUERY_PRODUCT_SEARCH);//query execute
+            while(srchRs.next()) {
+            	addproBean.setTxtProductId(srchRs.getString(1));
+            	addproBean.setTxtProductName(srchRs.getString(2));
+            	addproBean.setSelProCateg(srchRs.getString(3));
+            	addproBean.setTxtBrand(srchRs.getString(4));
+            	addproBean.setTxtUnit(srchRs.getInt(5));
+            	addproBean.setTxtPurQty(srchRs.getLong(6));
+            	addproBean.setTxtBarcode(srchRs.getString(7));
+            	addproBean.setTxtUnitPrice(srchRs.getLong(8)); 
+            	addproBean.setTxtDisDateRange(srchRs.getDate(9));
+            	addproBean.setTxtDiscount(srchRs.getLong(10));
+            	addproBean.setTxtQuantity(srchRs.getLong(11));
+            	addproBean.setTxtProImage(null);
+            	addproBean.setTxtProDesc(srchRs.getString(13));
+            	addproBean.setTxtProComm(srchRs.getString(14));
+            	addproBean.setTxtloggedUser(srchRs.getString(15));
+            	addproBean.setTxtCreatedDate(srchRs.getDate(16));
+            	productSrchList.add(addproBean);
+            }
+            
+        }  catch(Exception e)
+        {
+            e.printStackTrace();
+         }       
+		return productSrchList;
+	}
 	
 }

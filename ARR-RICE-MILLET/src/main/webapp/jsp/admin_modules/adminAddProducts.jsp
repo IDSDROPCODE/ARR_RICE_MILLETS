@@ -32,10 +32,10 @@
     <div class="content-header"  >
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="black">ADMINISTRATOR - ADD NEW PRODUCTS</h1>
+          <div class="col-sm-7">
+            <h5 class="black">ADMINISTRATOR - ADD NEW PRODUCTS</h5>
           </div><!-- /.col -->
-          <div class="col-sm-2">
+          <div class="col-sm-3">
           <div class="btn-group d-block mr-0 ml-auto mr-3 float-sm-right" >
    <button type="submit" class="btn btn-success" data-toggle="tooltip" title="Click To Save New Product" style="font-size:20px;"><i class="fa fa-save" ></i></button>
   <button type="button" class="btn btn-danger" data-toggle="tooltip" title="Delete" style="font-size:20px;"> <i class="fa fa-trash" ></i></button>

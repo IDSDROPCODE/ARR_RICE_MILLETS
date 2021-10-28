@@ -62,7 +62,7 @@
         
         <div class="input-group mb-3">
           <span class="text-danger">*</span>
-         &nbsp; <input type="text" class="form-control" id="txtFullname" maxlength="150" name="txtFullname" placeholder="Full name"   onchange="formcolorchange(this);" autocomplete="off">
+         &nbsp; <input type="text" class="form-control" id="txtFullname" maxlength="150" name="txtFullname" placeholder="Full name"   onchange="formcolorchange(this);lettersOnly(this);" autocomplete="off">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -91,7 +91,7 @@
         
         <div class="input-group mb-3">
          <span class="text-danger">*</span>
-         &nbsp;  <input type="password" class="form-control" id="txtPassword" name="txtPassword" maxlength="10" placeholder="Password" autocomplete="off"  onchange="formcolorchange(this);chkpassword(this); "> 
+         &nbsp;  <input type="password" class="form-control" id="txtPassword" name="txtPassword" maxlength="6" placeholder="Password" autocomplete="off"  onchange="formcolorchange(this);chkpassword(this); "> 
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -100,7 +100,7 @@
         </div>
         <div class="input-group mb-3">
           <span class="text-danger">*</span>
-         &nbsp; <input type="password" class="form-control" id="txtConPassword" name="txtConPassword" maxlength="10" placeholder="Retype password" autocomplete="off"  onchange="formcolorchange(this);conPassword();">
+         &nbsp; <input type="password" class="form-control" id="txtConPassword" name="txtConPassword" maxlength="6" placeholder="Retype password" autocomplete="off"  onchange="formcolorchange(this);conPassword();">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>

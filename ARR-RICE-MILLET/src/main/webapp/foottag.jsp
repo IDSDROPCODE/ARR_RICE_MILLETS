@@ -23,13 +23,6 @@
 	<script src="<%=request.getContextPath()%>/plugins/moment/moment.min.js"></script>
 	<script src="<%=request.getContextPath()%>/plugins/daterangepicker/daterangepicker.js"></script>
 	
-	<script src="<%=request.getContextPath()%>/plugins/datatables/dataTables.fixedColumns.min.js"></script>
-<script src="<%=request.getContextPath()%>/plugins/datatables/dataTables.keyTable.min.js"></script>
-<script src="<%=request.getContextPath()%>/plugins/datatables/dataTables.responsive.js"></script>
-<script src="<%=request.getContextPath()%>/plugins/datatables/dataTables.select.min.js"></script> 
-<script src="<%=request.getContextPath()%>/plugins/datatables/jquery.dataTables.js"></script>
-<script src="<%=request.getContextPath()%>/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<%=request.getContextPath()%>/plugins/datatables/arr.tables.js"></script>
 	<!-- Tempusdominus Bootstrap 4 -->
 	<script
 		src="<%=request.getContextPath()%>/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
@@ -42,7 +35,16 @@
 	<script src="<%=request.getContextPath()%>/dist/js/adminlte.js"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<%=request.getContextPath()%>/dist/js/demo.js"></script>
-	<script src="<%=request.getContextPath()%>/common/common_script.js"></script>
 	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 	<script src="<%=request.getContextPath()%>/dist/js/pages/dashboard.js"></script>
+	
+	<script src="<%=request.getContextPath()%>/plugins/datatables/dataTables.fixedColumns.min.js"></script>
+<script src="<%=request.getContextPath()%>/plugins/datatables/dataTables.keyTable.min.js"></script>
+<script src="<%=request.getContextPath()%>/plugins/datatables/dataTables.responsive.js"></script>
+<script src="<%=request.getContextPath()%>/plugins/datatables/dataTables.select.min.js"></script> 
+<script src="<%=request.getContextPath()%>/plugins/datatables/jquery.dataTables.js"></script>
+<script src="<%=request.getContextPath()%>/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<%=request.getContextPath()%>/common/arr.tables.js"></script>
+
+	<script src="<%=request.getContextPath()%>/common/common_script.js"></script>
 	

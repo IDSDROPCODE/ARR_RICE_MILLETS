@@ -30,13 +30,20 @@
     <div class="content-header"  >
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="black">ADMINISTRATOR - LIST OF ALL PRODUCTS</h1>
+          <div class="col-sm-7">
+            <h5 class="black">ADMINISTRATOR - ALL PRODUCTS</h5>
           </div><!-- /.col -->
-          <div class="col-sm-6">
+          <div class="col-sm-3">
+          <div class="btn-group d-block mr-0 ml-auto mr-3 float-sm-right" >
+   <button type="submit" class="btn btn-success" data-toggle="tooltip" title="Click To Save New Product" style="font-size:20px;"><i class="fa fa-save" ></i></button>
+  <button type="button" class="btn btn-danger" data-toggle="tooltip" title="Delete" style="font-size:20px;"> <i class="fa fa-trash" ></i></button>
+    <button type="button" class="btn btn-warning" data-toggle="tooltip" title="Edit" style="font-size:20px;"> <i class="fa fa-edit" ></i></button>
+     <button type="button" class="btn btn-info" data-toggle="tooltip" title="Clear" style="font-size:20px;"> <i class="fa fa-eraser" ></i></button>
+</div></div>
+          <div class="col-sm-2">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard </li>
+              <li class="breadcrumb-item active">All Products </li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -46,7 +53,7 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
+      <div class="container mt-3">
         <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-12">
@@ -56,10 +63,9 @@
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
+                    <input type="text" name="srchProName" id="srchProName" class="form-control float-right" placeholder="Search Product Name"> 
                     <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
+                      <button type="submit" class="btn btn-default" onclick="searchAllProducts();">
                         <i class="fas fa-search"></i>
                       </button>
                     </div>
@@ -67,17 +73,7 @@
                 </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 300px;">
-               
-<div class="table-responsive"> 
-					<div class="btn-group pull-right funcToDisable" role="group"> 
-						<button type="button" class="btn btn-default navbar-btn  "  id="DProductPt"  ><i class="fa fa-trash" ></i></button>
-						</div>
-					<div class="btn-group pull-right funcToDisable" role="group" style="margin-right: 10px;" > 
-						<button type="button" class="btn btn-default navbar-btn"  id="AProductPt"><i class="fa fa-save" ></i></button>
-						<button type="button" class="btn btn-default navbar-btn" id="EProductPt"  ><i class="fa fa-edit" ></i></button> 
-						</div> 
-					</div>  
+              <div class="card-body table-responsive p-0" >  
 					<div class="">  
 	<div class="col-md-12" >
 					<table id="newProductTable" class="dataTable table-bordered table-striped display hover" style="width:100%" >
@@ -91,22 +87,22 @@
 										</div>
 									</th>
 									<!--changes done 19/06/2019 -->
-									<th><div>Product Id</div></th>
-									<th><div>Product Name</div></th> 
-									<th><div>Product Category</div></th>  
-									<th><div>Brand</div></th>
-									<th><div>Unit</div></th>
-									<th><div>Purchase Quantity</div></th>
-									<th><div>Bar-code</div></th>
-									<th><div>Unit Price</div></th> 
-									<th><div>DisDateRange</div></th>
-									<th><div>Discount</div></th>
-									<th><div>Quantity</div></th>
-									<th><div>Product Image</div></th>
-									<th><div>Description</div></th>
-									<th><div>Commission</div></th>
-									<th><div>logged User</div></th>
-									<th><div>Created Date</div></th> 
+									<th><div  style="width:200px;">Product Id</div></th>
+									<th><div style="width:200px;">Product Name</div></th> 
+									<th><div style="width:200px;">Product Category</div></th>  
+									<th><div style="width:200px;">Brand</div></th>
+									<th><div style="width:200px;">Unit</div></th>
+									<th><div style="width:200px;">Purchase Quantity</div></th>
+									<th><div style="width:200px;">Bar-code</div></th>
+									<th><div style="width:200px;">Unit Price</div></th> 
+									<th><div style="width:200px;">DisDateRange</div></th>
+									<th><div style="width:200px;">Discount</div></th>
+									<th><div style="width:200px;">Quantity</div></th>
+									<th><div style="width:200px;">Product Image</div></th>
+									<th><div style="width:200px;">Description</div></th>
+									<th><div style="width:200px;">Commission</div></th>
+									<th><div style="width:200px;">logged User</div></th>
+									<th><div style="width:200px;">Created Date</div></th> 
 									
 									
 					     		</tr>							 

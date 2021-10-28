@@ -52,7 +52,7 @@
        <br><span class="text-danger"> Denote (*) symbol fields are mandatory</span>&nbsp; 
         <div class="input-group mb-3">
         <span class="text-danger">*</span>&nbsp;  
-          <input type="email" class="form-control" placeholder="Email" maxlength="150" name="txtfldlogEmailId" id="txtfldlogEmailId" autocomplete="off" onchange="removeMsg();EmailCheck(this);">
+          <input type="email" class="form-control" placeholder="Email" maxlength="150" name="txtfldlogEmailId" id="txtfldlogEmailId" autocomplete="off" onchange="removeMsg(this);EmailCheck(this);" maxlength="150"  />
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -61,7 +61,7 @@
         </div>
         <div class="input-group mb-3">
         <span class="text-danger">*</span>&nbsp; 
-          <input type="password" class="form-control" placeholder="Password" maxlength="10" name="txtfldlogPass" id="txtfldlogPass" autocomplete="off" onchange="chkpassword(this);">
+          <input type="password" class="form-control" placeholder="Password" maxlength="10" name="txtfldlogPass" id="txtfldlogPass" autocomplete="off" onchange="chkpassword(this);" maxlength="6">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
