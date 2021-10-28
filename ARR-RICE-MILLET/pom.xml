@@ -1,0 +1,140 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ARR-RICE-MILLET</groupId>
+  <artifactId>ARR-RICE-MILLET</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <build>
+  
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+      </plugin>
+    </plugins>
+    
+  </build>
+  
+ <dependencies> 
+ <!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
+<dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+</dependency>
+ 
+		  			<dependency>
+				  		<groupId>commons-beanutils</groupId>
+				  		<artifactId>commons-beanutils</artifactId>
+				  		<version>1.9.4</version>
+				  	</dependency> 
+		  	
+				  	<dependency>
+				    <groupId>org.apache.commons</groupId>
+				    <artifactId>commons-collections4</artifactId>
+				    <version>4.4</version>
+				</dependency>
+				<!-- https://mvnrepository.com/artifact/commons-digester/commons-digester -->
+				<dependency>
+				    <groupId>commons-digester</groupId>
+				    <artifactId>commons-digester</artifactId>
+				    <version>2.1</version>
+				</dependency>
+				<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+				<dependency>
+				    <groupId>commons-fileupload</groupId>
+				    <artifactId>commons-fileupload</artifactId>
+				    <version>1.4</version>
+				</dependency>
+				<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+				<dependency>
+				    <groupId>commons-io</groupId>
+				    <artifactId>commons-io</artifactId>
+				    <version>2.11.0</version>
+				</dependency>
+				<!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+				<dependency>
+				    <groupId>commons-lang</groupId>
+				    <artifactId>commons-lang</artifactId>
+				    <version>2.6</version>
+				</dependency>
+				<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging-api -->
+					<dependency>
+					    <groupId>commons-logging</groupId>
+					    <artifactId>commons-logging-api</artifactId>
+					    <version>1.1</version>
+					</dependency>
+					<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+<dependency>
+    <groupId>dom4j</groupId>
+    <artifactId>dom4j</artifactId>
+    <version>1.6.1</version>
+</dependency>
+					<!-- https://mvnrepository.com/artifact/net.sf.ezmorph/ezmorph -->
+<dependency>
+    <groupId>net.sf.ezmorph</groupId>
+    <artifactId>ezmorph</artifactId>
+    <version>1.0.6</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/jstl/jstl -->
+<dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
+ 
+
+			<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+</dependency>
+					<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.25</version>
+</dependency>
+			<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>4.0.1</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20090211</version>
+</dependency>
+					
+									
+
+
+
+
+
+  	
+ </dependencies>
+  
+ 
+</project> 
