@@ -48,7 +48,7 @@ CREATE TABLE `arr_product` (
     PRIMARY KEY (`ProId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-SELECT `arr_product`.`ProId`,-- nPro00
+SELECT `arr_product`.`ProId`,-- nPro00 AUTO INCREMENTED ID
     `arr_product`.`ProName`,
     `arr_product`.`ProCateg`,
     `arr_product`.`Brand`,
