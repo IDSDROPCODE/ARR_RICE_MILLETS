@@ -45,6 +45,7 @@ public class ARRMainServlet extends HttpServlet {
 		if(strDBCallFor.equalsIgnoreCase("PRODUCT_SEARCH")){
 			retval =  productSearch(request);
 		}
+		//testing second
 		
 		out.print(retval);
 		
